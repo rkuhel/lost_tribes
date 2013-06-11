@@ -1,0 +1,10 @@
+	<table>
+	<% @events.each do |event| %> 
+	<tr>
+		<td> <%= event.title %> </td>
+		<td> <%= event.date %> </td>
+		<td> <%= event.location %> </td>
+		<td> <%= event.description %> </td>
+	<% end %>
+	</tr>
+	</table>

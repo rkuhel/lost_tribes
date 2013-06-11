@@ -9,5 +9,11 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require normalize
+ *= require foundation.min
+<<<<<<< HEAD:app/assets/stylesheets/application.css.scss
  */
+ 
+=======
+ */
+>>>>>>> 195517d4f022aa2be5a87060134ff03f07ebf71e:app/assets/stylesheets/application.css.scss

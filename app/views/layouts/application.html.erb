@@ -2,13 +2,22 @@
 <html>
 <head>
   <title>LostTribes</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<<<<<<< HEAD
+<!-- <p>Test Comment</p> -->
+<%= yield %>
+<script>$(document).foundation();</script>
+=======
+<%= render partial: "/layouts/partials/nav.html.erb" %> 
 <%= yield %>
 
+<script>
+  $(document).foundation();
+</script>
+>>>>>>> 195517d4f022aa2be5a87060134ff03f07ebf71e
 </body>
 </html>
