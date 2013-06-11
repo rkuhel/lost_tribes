@@ -1,5 +1,3 @@
-
-
 class EventsController < ApplicationController 
 
 
@@ -38,7 +36,7 @@ class EventsController < ApplicationController
     #   render 'new'
     # end
   end
-
+  
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
