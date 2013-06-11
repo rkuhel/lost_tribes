@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'pg'
+gem 'bcrypt-ruby'
+
 
 
 group :assets do
