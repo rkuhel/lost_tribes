@@ -10,7 +10,7 @@ c3 = Customer.create(name: "Mike Knoph", email: "mike@gmail.com", zip: "10014", 
 
 e1 = Event.create(title: "Tumblr Party", date: "2013-09-23 06-30", location: "110 3rd avenue apt 10d", description: "office party")
 
-v1 = Vendor.create( name: "whole foods", address: "manhattan", phone: "212 322 3444", email: "ny@wholefoods.com", comment: "yayy")
+v1 = Vendor.create( name: "whole foods", address: "manhattan", phone: "212 322 3444", email: "ny@wholefoods.com", comment: "yayy", password: "whole")
 
 
 e1.customers << c1 << c2 << c3 
