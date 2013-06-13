@@ -23,4 +23,9 @@
         %a{:href => "#"} Twitter
       %li.active
         %a{:href => "#"}/
-        %a.button{:href => "#"} Default Button
+        %a.button{:href => "#"} Login
+      %li.active
+        - if session[:vendor_id] = nil
+          = link_to 'Logout', logout_path, method: :delete, class: "button"
+          else
+          = link_to 'Login', sessions_new_path, method: :get, class: "button"

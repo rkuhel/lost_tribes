@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    puts Vendor = Vendor.find_by_email(params[:email]) 
-    authenticated_Vendor = Vendor.authenticate(params[:password])
-    if authenticated_Vendor
-    	session[:Vendor_id] = authenticated_Vendor.id
+    puts vendor = Vendor.find_by_email(params[:email]) 
+    authenticated_vendor = vendor.authenticate(params[:password])
+    if authenticated_vendor
+    	session[:Vendor_id] = authenticated_vendor.id
     	p session
     	message = 'You are authenticated!'
     	render text: message, layout: true
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-			session[:Vendor_id] = nil
+			session[:vendor_id] = nil
 			p session
 			redirect_to sessions_new_path
     end    
