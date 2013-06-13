@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-<<<<<<< HEAD
+
 	def index
 		puts 'in homecontroller'
 
@@ -15,10 +15,5 @@ class HomeController < ApplicationController
 		#form to create new customer 
 		@customer = Customer.new 
 	end			
-=======
-  def index
-  	# render
-  end
 
->>>>>>> cdb5c927f9b853cd5afa5f29b75b671b233893ac
 end
