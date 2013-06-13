@@ -1,0 +1,14 @@
+<table>
+	<% @vendors.each do |vendor| %> 
+	<tr>
+			<td> <%= link_to vendor.name, vendor %> </td>
+			<td> <%= vendor.phone %> </td>
+			<td> 
+				<a href="mailto:<%= vendor.email %>">
+					<i class="general foundicon-mail"></i>
+				</a> 
+			</td>
+			<td> <%= vendor.comment %> </td>
+	<% end %>
+	</tr>
+</table>
