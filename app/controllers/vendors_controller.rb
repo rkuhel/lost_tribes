@@ -1,5 +1,8 @@
 class VendorsController < ApplicationController
   def index
+
+    before_filter :ensure_admin, only: [:index, :destroy]
+    
     @vendors = Vendor.all
     # render index
   end
