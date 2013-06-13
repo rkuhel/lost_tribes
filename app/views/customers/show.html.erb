@@ -1,0 +1,11 @@
+<h1><%= @customer.name %></h1>
+<p>Name: <%= @customer.name %></p>
+<p>Email: <%= @customer.email %></p>
+<p>Zip<%= @customer.zip %></p>
+<p>Comment: <%= @customer.comment %></p>
+
+
+<h2>From Customers:</h2>
+
+<%= button_to 'Edit', edit_customer_path(@customer), method: 'get' %>
+<%= button_to 'Delete', customer_path(@customer), method: 'delete' %>

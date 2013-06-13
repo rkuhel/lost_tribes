@@ -1,0 +1,19 @@
+	<table>
+	<% @customers.each do |customer| %> 
+	<tr>
+		<td> <%= link_to customer.name, customer %> </td>
+		<td> <%= customer.email %> </td>
+		<td> <%= customer.zip %> </td>
+		<td> <%= customer.comment %> </td>
+
+		
+	<% end %>
+	</tr>
+	</table>
+
+
+
+
+
+
+
