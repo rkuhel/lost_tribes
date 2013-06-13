@@ -24,11 +24,13 @@ class VendorsController < ApplicationController
 
   def new
     @vendor = Vendor.new
+    @events = Event.all
     # render :new
   end
 
   def edit
     @vendor = Vendor.find(params[:id])
+    @events = Event.all
 
     # render :edit
   end
@@ -48,7 +50,7 @@ class VendorsController < ApplicationController
     end
     # render :update
   end
-
+  
   def destroy
     Vendor.find(params[:id]).delete  #no instance variable required--we are throwing it away
     redirect_to vendors_path
