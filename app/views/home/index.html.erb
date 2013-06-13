@@ -1,0 +1,42 @@
+	
+	<table>
+	<% @events.each do |event| %> 
+	<tr>
+		<td> <%= event.title %> </td>
+		<td> <%= event.date %> </td>
+		<td> <%= event.location %> </td>
+		<td> <%= event.description %> </td>
+	<% end %>
+	</tr>
+	</table>
+
+ 
+
+
+<table>
+	<% @vendors.each do |vendor| %> 
+	<tr>
+		<td> <%= vendor.name %> </td>
+		<td> <%= vendor.email %> </td>
+		<td> <%= vendor.address %> </td>
+		<td> <%= vendor.phone %> </td>
+		<td> <%= vendor.comment %> </td>
+
+	<% end %>
+	</tr>
+</table>
+</div>
+
+<div class="customer-info">
+<%= form_for @customer do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %><br>
+
+	<%= f.label :email %> 
+	<%= f.text_field :email %> <br>
+
+<%= f.submit %>
+<% end %>
+</div> 
+
+

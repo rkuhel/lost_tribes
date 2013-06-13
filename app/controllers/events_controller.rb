@@ -5,43 +5,40 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
-  def show
-    @event = Event.find(params[:id])
+  def create
+    event = Event.create(params['event'])
+    if event.save!
+      redirect_to events_path
+    else
+      redirect_to new_event_path
+    end
+  end
+
+   def new
+    @event = Event.new
   end
 
   def edit
     @event = Event.find(params[:id])
   end
 
-  def update
+  def show
     @event = Event.find(params[:id])
-
-    # if @event.update(params[:event]
-    #   redirect_to action: :show, id: @event.id
-    # else
-    #   render 'edit'
-    # end
   end
 
-  def new
-    @event = Event.new
-  end
+  def update
+    event = Event.find(params[:id])
 
-  def create
-    @event = Event.new(params[:event])
-
-    # if @event.save
-    #   redirect_to action: :show, id: @event.id
-    # else
-    #   render 'new'
-    # end
+    if event.update_attributres(params[:id])
+      redirect_to events_path 
+    else
+      redirect_to edit_event_path 
+    end
   end
   
   def destroy
-    @event = Event.find(params[:id])
-    @event.destroy
-
-    redirect_to action: :index
+    Event.find(params[:id]).delete
+    redirect_to events_path
   end
 
 end 

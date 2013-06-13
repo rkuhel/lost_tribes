@@ -1,54 +1,48 @@
-class CustomersController < ApplicationController
+class CustomersController < ApplicationController 
 
-def index
-  @customer = Customer.new
-end
 
-def show
-  @customer = Customer.find(params[:id])
-end
-
-def edit
-  @customer = Customer.find(params[:id])
-end
-
-def update
-  @customer = Customer.find(params[:id])
-
-  if @customer.update(params[:customer])
-    redirect_to action: :show, id: @customer.id
-  else
-    render 'edit'
+  def index
+    @customers = Customer.all
   end
-end
 
-def new
-  @customer = Customer.new
-end
-
-def create
-  @customer = Customer.new(params[:customer])
-
-  if @customer.save
-    redirect_to action: :show, id: @customer.id
-  else
-    render 'new'
+  def create
+    customer = Customer.create(params['customer'])
+    if customer.save!
+      redirect_to customers_path
+    else
+      redirect_to new_customer_path
+    end
   end
-end
 
-def destroy
-  @customer = Customer.find(params[:id])
-  @customer.destroy
+   def new
+    @customer = Customer.new
+  end
 
-  redirect_to action: :index
-end
-end
+  def edit
+    @customer = Customer.find(params[:id])
+  end
+
+  def show
+    @customer = Customer.find(params[:id])
+  end
+
+def update 
+    customer = Customer.find(params[:id])
+    if customers.update_attributes(params[:customer])
+      redirect_to customers_path
+    else
+      redirect_to edit_customers_path 
+    end
+  end
+
+
+  def destroy
+    Customer.find(params[:id]).delete
+    redirect_to customers_path
+  end
+end 
 
 
 
 
 
-
-
-
-  
