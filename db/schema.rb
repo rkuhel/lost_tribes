@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20130610204913) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
-    t.date     "date"
+    t.datetime "date"
     t.string   "location"
     t.string   "description"
     t.datetime "created_at",  :null => false
