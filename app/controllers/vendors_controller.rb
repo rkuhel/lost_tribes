@@ -1,6 +1,6 @@
 class VendorsController < ApplicationController
 
-    before_filter :ensure_admin, only: [:index, :destroy, :edit]
+    before_filter :ensure_admin, only: [ :index, :destroy, :show, :edit]
 
   def index
     @vendors = Vendor.all
@@ -10,9 +10,8 @@ class VendorsController < ApplicationController
     vendor = Vendor.new(params[:vendor])
        #params vendor because we are dealing with the forms fields people enter
     vendor.save!
-    render nothing: true
     # # Vendor.create(:title => 'Cooking with fish', :cuisine => 'fishy', :descripion => 'A book about...')
-    # redirect_to vendors_path
+    redirect_to "/"
     #  # render :create
   end
 
@@ -27,8 +26,7 @@ class VendorsController < ApplicationController
   end
   def edit
     @vendor = Vendor.find(params[:id])
-    @events = Event.all
-
+    # @events = Event.all
     # render :edit
   end
   def show

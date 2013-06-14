@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController 
 
-before_filter :ensure_admin, only: [:index, :destroy]
+before_filter :ensure_admin, only: [:edit, :destroy, :index]
 
   def index
     @customers = Customer.all
@@ -9,9 +9,9 @@ before_filter :ensure_admin, only: [:index, :destroy]
   def create
     customer = Customer.create(params['customer'])
     if customer.save!
-      redirect_to customers_path
+      redirect_to "/" 
     else
-      redirect_to new_customer_path
+      redirect_to new_customer_path 
     end
   end
 
@@ -29,7 +29,7 @@ before_filter :ensure_admin, only: [:index, :destroy]
 
 def update 
     customer = Customer.find(params[:id])
-    if customers.update_attributes(params[:customer])
+    if customer.update_attributes(params[:customer])
       redirect_to customers_path
     else
       redirect_to edit_customers_path 
