@@ -1,5 +1,6 @@
 class Vendor < ActiveRecord::Base
-	has_and_belongs_to_many :events  
+	  attr_accessible :address, :comment, :email, :name, :phone, :events, :password, :admin
 
-  attr_accessible :address, :comment, :email, :name, :phone, :events
+	has_and_belongs_to_many :events
+	has_secure_password
 end
