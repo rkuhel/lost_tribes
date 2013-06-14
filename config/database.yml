@@ -8,7 +8,7 @@ development:
   encoding: unicode
   database: lost_tribes
   host: localhost
-  username: ryankuhel
+  username: chriseichler
   pool: 5
   timeout: 5000
 

@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 
 		#events 
 		@events = Event.all
-
+		
 		#new customers 
 		@customers = Customer.all
 
@@ -15,5 +15,4 @@ class HomeController < ApplicationController
 		#form to create new customer 
 		@customer = Customer.new 
 	end			
-
 end

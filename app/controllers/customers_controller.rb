@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController 
 
+before_filter :ensure_admin, only: [:index, :destroy]
 
   def index
     @customers = Customer.all

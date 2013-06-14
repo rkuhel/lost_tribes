@@ -1,0 +1,29 @@
+  
+  <table>
+  <% @events.each do |event| %> 
+  <tr>
+    <td> <%= event.title %> </td>
+    <td> <%= event.date %> </td>
+    <td> <%= event.location %> </td>
+    <td> <%= event.description %> </td>
+  <% end %>
+  </tr>
+  </table>
+
+
+<table>
+  <% @vendors.each do |vendor| %> 
+  <tr>
+    <td> <%= vendor.name %> </td>
+    <td> <%= vendor.email %> </td>
+    <td> <%= vendor.address %> </td>
+    <td> <%= vendor.phone %> </td>
+    <td> <%= vendor.comment %> </td>
+
+  <% end %>
+  </tr>
+</table>
+</div>
+
+
+
