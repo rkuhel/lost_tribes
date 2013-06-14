@@ -1,7 +1,6 @@
 class VendorsController < ApplicationController
 
-  before_filter :ensure_admin, only: [:index, :destroy]
-
+    before_filter :ensure_admin, only: [:new, :index, :destroy, :show, :edit]
 
   def index
     @vendors = Vendor.all
@@ -41,7 +40,7 @@ class VendorsController < ApplicationController
       redirect_to vendors_path
     else
       # We need to give feedback if unsuccessful
-      redirect_to edit_vendor_path
+      redirect_to edit_vendors_path
     end
     # render :update
   end

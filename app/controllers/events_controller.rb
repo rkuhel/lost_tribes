@@ -1,5 +1,6 @@
 class EventsController < ApplicationController 
 
+before_filter :ensure_admin, only: [:new, :index, :destroy, :show, :edit]
 
   def index
     @events = Event.all
@@ -29,7 +30,7 @@ class EventsController < ApplicationController
   def update
     event = Event.find(params[:id])
 
-    if event.update_attributres(params[:id])
+    if event.update_attributes(params[:id])
       redirect_to events_path 
     else
       redirect_to edit_event_path 

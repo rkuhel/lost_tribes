@@ -1,12 +1,22 @@
 <h1><%= @vendor.name %></h1>
-<p>Name: <%= @vendor.name %></p>
-<p>Email: <%= @vendor.email %></p>
-<p>Phone: <%= @vendor.phone %></p>
-<p>Address: <%= @vendor.address %></p>
-<p>Comment: <%= @vendor.comment %></p>
+<table>
+<tr>
+	<th>Name: </th>
+	<th>Email:</th>
+	<th>Phone:</th>
+	<th>Address:</th>
+	<th>Comment: </th>
+	<th colspan="2"> Update Customer </th>
+	
+<tr>
+<th><%= @vendor.name %></th>
+<th> <%= @vendor.email %></th>
+<th> <%= @vendor.phone %></th>
+<th> <%= @vendor.address %></th>
+<th><%= @vendor.comment %></th>
+<th><i class="general foundicon-trash"><%= button_to 'Edit', edit_vendor_path(@vendor), method: 'get' %></i></th>
+<th><%= button_to 'Delete', vendor_path(@vendor), method: 'delete' %></th>
+</tr>
+<table>
 
 
-<h2>From Vendors</h2>
-
-<%= button_to 'Edit', edit_vendor_path(@vendor), method: 'get' %>
-<%= button_to 'Delete', vendor_path(@vendor), method: 'delete' %>
