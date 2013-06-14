@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
 
 before_filter :ensure_admin, only: [:index, :destroy, :show, :edit]
 
+
   def index
     @customers = Customer.all
   end
@@ -10,9 +11,9 @@ before_filter :ensure_admin, only: [:index, :destroy, :show, :edit]
   def create
     customer = Customer.create(params['customer'])
     if customer.save!
-      redirect_to '/', :notice => "You have successfully joined our mailing list!"
+      redirect_to "/" 
     else
-      redirect_to new_customer_path, :error => "Error! Please try again."
+      redirect_to new_customer_path 
     end
   end
 
@@ -30,7 +31,7 @@ before_filter :ensure_admin, only: [:index, :destroy, :show, :edit]
 
 def update 
     customer = Customer.find(params[:id])
-    if customer.update_attributes(params["customer"])
+    if customer.update_attributes(params[:customer])
       redirect_to customers_path
     else
       redirect_to edit_customers_path 

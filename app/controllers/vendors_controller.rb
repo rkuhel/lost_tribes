@@ -1,6 +1,7 @@
 class VendorsController < ApplicationController
 
-    before_filter :ensure_admin, only: [:new, :index, :destroy, :show, :edit]
+    before_filter :ensure_admin, only: [ :index, :destroy, :show, :edit]
+
 
   def index
     @vendors = Vendor.all
@@ -11,9 +12,8 @@ class VendorsController < ApplicationController
     vendor = Vendor.new(params[:vendor])
        #params vendor because we are dealing with the forms fields people enter
     vendor.save!
-    render nothing: true
     # # Vendor.create(:title => 'Cooking with fish', :cuisine => 'fishy', :descripion => 'A book about...')
-    # redirect_to vendors_path
+    redirect_to "/"
     #  # render :create
   end
 
@@ -27,13 +27,12 @@ class VendorsController < ApplicationController
   end
   def edit
     @vendor = Vendor.find(params[:id])
+  end
 
-    # render :edit
-  end
   def show
-    @vendor = Vendor.find(params[:id])   #@vendor instance variable here just needs to be consistent when referneced. Can be anything.
-    # render :show           capitalized Vendor. is not arbitrary. Must be exact class name.
+    @vendor = Vendor.find(params[:id])   
   end
+  
   def update
     vendor = Vendor.find(params['id'])  # this is params id because it's the id in the url--which book are we talking about?
     if vendor.update_attributes(params["vendor"])  #yes, an action is happening in the condition
