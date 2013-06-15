@@ -2,19 +2,13 @@ class HomeController < ApplicationController
 	before_filter :ensure_admin, only: [:destroy, :show, :edit, :create]
 	def index
 		puts 'in homecontroller'
-
-		#events 
 		@events = Event.all
-		
-		#new customers 
-
-
-		#display vendors
-		@vendors = Vendor.all
-
-		#form to create new customer 
+		@vendors = Vendor.all 
 		@customer = Customer.new 
-	end			
+
+
+	end		
+ 	
 
 	def create 
 		customer = Customer.new(params[:customer])
@@ -25,4 +19,5 @@ class HomeController < ApplicationController
 			puts "error"
 		end
 	end
+
 end

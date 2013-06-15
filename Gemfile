@@ -5,6 +5,9 @@ gem 'pg'
 gem 'bcrypt-ruby'
 gem 'haml'
 gem 'jquery-rails'
+gem 'geocoder'
+gem 'gmaps4rails'
+
 
 
 group :assets do
@@ -13,6 +16,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation', '~> 4.0.0'
   gem 'foundation-icons-sass-rails'
+  gem "font-awesome-rails"
+
 end
 
 group :development, :test do

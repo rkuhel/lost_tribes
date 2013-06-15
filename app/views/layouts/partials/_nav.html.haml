@@ -12,13 +12,26 @@
     / Right Nav Section
     %ul.right
       %li.active
-        %a{:href => "#brews"} Our Brews
+        %a{:href => "#brews"}
+          / Brew
+          %i.icon-beer
+          
       %li.active
-        %a{:href => "#map"} Vendors
+        %a{:href => "#map"} 
+          / Vendors
+          %i.icon-building
+          
+          
       %li.active
-        %a{:href => "#events"} Events
+        %a{:href => "#events"} 
+          / Events
+          %i.general.foundicon-calendar
+          
       %li.active
-        %a{:href => "#contact"} Contact
+        %a{:href => "mailto:info@LostTribesBrew.com"}
+          / Contact Us
+          %i.general.foundicon-mail
+          
 
       %li.active
         - unless current_vendor

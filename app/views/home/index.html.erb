@@ -1,40 +1,57 @@
-<style>
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyAWySaUYYlEwvq3KquSOJmFpPwrnLItW4Y&sensor=false" 
+          type="text/javascript"></script>
+  <div id="map" style="width: 500px; height: 400px;"></div>
 
-i {
-		font-weight: 1000;
-		color: blue;
-}
-i:hover {
+  <script type="text/javascript">
+    var vendors = [];
 
-			color: red;
-			font-weight: bold; 
+    <% @vendors.each do |vendor| %>
+      vendors.push(["<%= vendor[0] %>", "<%= vendor[1] %>","<%= vendor[2] %>", "<%= vendor[3] %>", "<%= vendor[4] %>", "<%= vendor[5] %>"]);
+    <% end %>
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 12,
+      center: new google.maps.LatLng(<%= @map_lat %>, <%= @map_lng %>),
+      mapTypeId: google.maps.MapTypeId.satellite
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(events[i][2], events[i][3]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent("<a href = '" + vendors[i][5] + "'>" + vendors[i][0] + "</a>"+  " <br/> Address: " + vendors[i][1] + " <br/> Date: " + events[i][4]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
 
 
-}
 
-
-
-</style>
 
 <div class="row">
-  <div class="large 12 large-centered"><h1>hellow, world</h1></div>
+  <div class="small 12 small-centered"><h1>hellow, world</h1></div>
 </div>
 
 
-<div class="container">	
 	<table>
-	<% @events.each do |event| %> 
-	<tr>
-		<td> <%= event.title %> </td>
-		<td> <%= event.date %> </td>
-		<td> <%= event.location %> </td>
-		<td> <%= event.description %> </td>
-	<% end %>
-	</tr>
+		<% @events.each do |event| %> 
+		<tr>
+			<td> <%= event.title %> </td>
+			<td> <%= event.date %> </td>
+			<td> <%= event.location %> </td>
+			<td> <%= event.description %> </td>
+		<% end %>
+		</tr>
 	</table>
-
-<a href="/vendors/new">Sign up as a Lost Tribes vendor!</a>
-
 
 <table>
 	<% @vendors.each do |vendor| %> 
@@ -44,16 +61,19 @@ i:hover {
 		<td> <%= vendor.address %> </td>
 		<td> <%= vendor.phone %> </td>
 		<td> <%= vendor.comment %> </td>
-
 	<% end %>
 	</tr>
 </table>
 
+
+
 <div class="icon">
- <a href="#" data-reveal-id="myModal">
- 	<h3><i class="general foundicon-mail"></i></h3>
- </a>
+ <a href="#" data-reveal-id="myModal" class="default button">
+	Sign up for our email newsletter</a>
 </div>
+
+<a href="/vendors/new" class="button">Sign up to become a vendor</a>
+
 
 
 <div id="myModal" class="reveal-modal">
@@ -64,7 +84,10 @@ i:hover {
 
 			<%= f.label :email %> 
 			<%= f.text_field :email %> <br>
-
+			<%= f.label :zip %> 
+			<%= f.text_field :zip %> <br>
+			<%= f.label :comment %> 
+			<%= f.text_field :comment %> <br>
 		<%= f.submit %>
 		<% end %>  
 	<a class="close-reveal-modal">&#215;</a>
