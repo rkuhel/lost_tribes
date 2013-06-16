@@ -18,7 +18,7 @@ e5 = Event.create(title: "forgot party", address: "110 3rd avenue", city: "new y
 
 v1 = Vendor.create( name: "whole foods", address: "110 3rd avenue", city: "new york city", phone: "212 322 3444", email: "ny@wholefoods.com", comment: "yayy", password: "whole", admin: false)
 v2 = Vendor.create( name: "mike's bistro", address: "316 east 11th street", city: "new york city", phone: "212 322 3444", email: "mike@mike.com", comment: "boss", password: "mike", admin: true)
-v3 = Vendor.create( name: "terry's shop", address: "carmine street", city: "new york city", phone: "212 322 9444", email: "terry@terry.com", comment: "wowwwwwww!", password: "terry", admin: false)
+v3 = Vendor.create( name: "terry's shop", address: "10 E 21ST ST", city: "new york city", phone: "212 322 9444", email: "terry@terry.com", comment: "wowwwwwww!", password: "terry", admin: false)
 v4 = Vendor.create( name: "Ted Bar", address: "80 lafayette", city: "new york city", phone: "212 322 3466", email: "george@george.com", comment: "hunugry", password: "george", admin: false)
 
 

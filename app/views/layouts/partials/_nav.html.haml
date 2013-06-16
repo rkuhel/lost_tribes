@@ -1,40 +1,39 @@
-%nav.top-bar
-  %ul.title-area
-    / Title Area
-    %li.name
-      %h1
-        %a{:href => "#"} Lost Tribes
-    / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
-    %li.toggle-topbar.menu-icon
-      %a{:href => "#"}
-        %span Menu
-  %section.top-bar-section
-    / Right Nav Section
-    %ul.right
-      %li.active
-        %a{:href => "#brews"}
-          / Brew
-          %i.icon-beer
-          
-      %li.active
-        %a{:href => "#map"} 
-          / Vendors
-          %i.icon-building
-          
-          
-      %li.active
-        %a{:href => "#events"} 
-          / Events
-          %i.general.foundicon-calendar
-          
-      %li.active
-        %a{:href => "mailto:info@LostTribesBrew.com"}
-          / Contact Us
-          %i.general.foundicon-mail
-          
+<nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1><a href="/">Lost Tribes Beer</a></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
 
-      %li.active
-        - unless current_vendor
-          = link_to 'Login', sessions_new_path, method: :get, class: "button"
-        - else
-          = link_to 'Logout', logout_path, method: :delete, class: "button"
+  <section class="top-bar-section">
+
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="divider hide-for-small"></li>
+      <li class="has-dropdown"><a href="#">Menu</a>
+
+        <ul class="dropdown">
+          <li><label>Brews</label></li>
+          <li class="has-dropdown"><a href="#brews" class="">Our Brew</a>
+          <li><a href="#vendors">Vendors Map</a></li>
+          <li><a href="#events">Events</a></li>
+          <li class="divider"></li>
+          <li><label>Admin</label></li>
+          <% unless current_vendor %>
+         
+          <li>
+            <a href="">Login</a>
+          </li>
+          <% else %>
+          <li><a href="">Logout</a></li>
+          <% end %>
+          <li class="divider"></li>
+          <li><a href="#">See all &rarr;</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</nav>

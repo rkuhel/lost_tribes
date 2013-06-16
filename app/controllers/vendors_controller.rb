@@ -6,22 +6,10 @@ class VendorsController < ApplicationController
   def index
     @vendors = Vendor.all
     # render index
+  end 
 
-    maps = Geocoder.search("Brooklyn, New York")
-    lat_lng = maps.first.data["geometry"]['location']
-    @map_lat = lat_lng["lat"]
-    @map_lng = lat_lng["lng"]
 
-    @locations = []
 
-    @vendors.each do |vendor|
-        address_tmp = "#{vendor.address}, #{vendor.city}"
-        @marker = Geocoder.search(address_tmp)
-        mark_lat = @marker.first.data["geometry"]['location']['lat']
-        mark_lng = @marker.first.data["geometry"]['location']['lng']
-        @locations << [vendor.title, vendor.address, mark_lat, mark_lng]
-    end
-  end
 
   def create
     vendor = Vendor.new(params[:vendor])

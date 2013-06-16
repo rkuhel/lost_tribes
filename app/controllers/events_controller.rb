@@ -43,5 +43,8 @@ before_filter :ensure_admin, only: [ :index, :destroy, :show, :edit]
     redirect_to events_path
   end
 
+  
+
+
 end 
 
