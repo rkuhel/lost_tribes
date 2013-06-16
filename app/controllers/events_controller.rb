@@ -6,6 +6,15 @@ before_filter :ensure_admin, only: [ :destroy]
     @events = Event.all
   end
 
+  def index
+  @events = Event.order(:title)
+  respond_to do |format|
+    format.html
+    format.csv { send_data @events.to_csv }
+    format.xls { send_data @events.to_csv(col_sep: "\t") }
+  end
+end
+
   def create
     event = Event.create(params['event'])
     if event.save!

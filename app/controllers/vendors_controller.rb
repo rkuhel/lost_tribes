@@ -1,14 +1,23 @@
 class VendorsController < ApplicationController
 
-    before_filter :ensure_admin, only: [ :index, :destroy, :show, :edit]
+  before_filter :ensure_admin, only: [ :index, :destroy, :show, :edit]
 
   def index
     @vendors = Vendor.all
     # render index
   end
+  def index
+    @vendors = Vendor.order(:name)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @vendors.to_csv }
+      format.xls { send_data @vendors.to_csv(col_sep: "\t") }
+    end
+  end
+
   def create
     vendor = Vendor.new(params[:vendor])
-       #params vendor because we are dealing with the forms fields people enter
+    #params vendor because we are dealing with the forms fields people enter
     vendor.save!
     # # Vendor.create(:title => 'Cooking with fish', :cuisine => 'fishy', :descripion => 'A book about...')
     redirect_to "/"

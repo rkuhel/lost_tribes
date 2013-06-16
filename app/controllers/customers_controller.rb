@@ -6,6 +6,15 @@ before_filter :ensure_admin, only: [:edit, :destroy, :index]
     @customers = Customer.all
   end
 
+  def index
+  @customers = Customer.order(:name)
+  respond_to do |format|
+    format.html
+    format.csv { send_data @customers.to_csv }
+    format.xls { send_data @customers.to_csv(col_sep: "\t") }
+  end
+end
+
   def create
     customer = Customer.create(params['customer'])
     if customer.save!
