@@ -8,24 +8,13 @@ body
 	background-color: #e2e2e2;
 }
 
+nav#top1.top-bar {  margin-bottom: 0px; }
 
-#box1 {
-  
-  background-color: #E33E17;
-
-
-}
+#box1 { background-color: #421F28;}
 
 .sub-nav { color: black; }
 .sub-nav:hover { color: red; }
 
-.top-nav {
-    -moz-box-shadow: 3px 3px 4px #000;
-    -webkit-box-shadow: 3px 3px 4px #000;
-    box-shadow: 3px 3px 4px #000;
-
-
-}
 i { color: white;}
 i:hover { 
 		color: red;
