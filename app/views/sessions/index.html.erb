@@ -1,5 +1,6 @@
   <%= render partial: "/sessions/partials/nav.html.haml" %> 
-
+<p>You are authenticated!</p>
+<br>
   <table>
   <% @events.each do |event| %> 
   <tr>
@@ -12,18 +13,6 @@
   </table>
 
 
-<table>
-  <% @vendors.each do |vendor| %> 
-  <tr>
-    <td> <%= vendor.name %> </td>
-    <td> <%= vendor.email %> </td>
-    <td> <%= vendor.address %> </td>
-    <td> <%= vendor.phone %> </td>
-    <td> <%= vendor.comment %> </td>
-
-  <% end %>
-  </tr>
-</table>
 </div>
 
 

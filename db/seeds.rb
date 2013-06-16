@@ -10,7 +10,7 @@ c3 = Customer.create(name: "Mike Knoph", email: "mike@gmail.com", zip: "10014", 
 c4 = Customer.create(name: "Horatio", email: "horat@gmail.com", zip: "10017",  comment: "drunk")
 c5 = Customer.create(name: "Sue Lee", email: "slee@gmail.com", zip: "10019",  comment: "So psyched.")
 
-e1 = Event.create(title: "Tumblr Party", date: "2013-09-23 06-30", location: "110 3rd avenue apt 10d", description: "office party")
+e1 = Event.create(title: "Tumblr Party", date: "2013-09-23 06-30", location: "10 E 21ST ST", description: "office party")
 e2 = Event.create(title: "birthday", date: "2013-07-23 06-30", location: "110 5th avenue apt 10d", description: "funeral party")
 e3 = Event.create(title: "Funeral", date: "2013-06-23 06-30", location: "108 7th avenue apt 10d", description: "small party")
 e4 = Event.create(title: "secret party", date: "2013-011-23 06-30", location: "10 3rd St apt 10d", description: "rad party")

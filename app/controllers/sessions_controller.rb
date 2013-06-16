@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
     if authenticated_vendor
       session[:vendor_id] = authenticated_vendor.id
       message = 'You are authenticated!'
-      render text: message, layout: true
+       # render text: message, layout: true
+      redirect_to "/sessions"
     else
       redirect_to sessions_new_path    #back to login page
     end
@@ -23,8 +24,6 @@ class SessionsController < ApplicationController
   end
 
   def index
-    puts 'in sessions_controller'
-
     #events
     @events = Event.all
 
