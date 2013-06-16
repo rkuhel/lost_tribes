@@ -1,12 +1,11 @@
 class HomeController < ApplicationController
 	before_filter :ensure_admin, only: [:destroy, :show, :edit, :create]
 	def index
-		puts 'in homecontroller'
 		@events = Event.all
 		@vendors = Vendor.all 
 		@customer = Customer.new 
 
-		maps = Geocoder.search("New York, NY", :timeout => 7)
+		maps = Geocoder.search("New York, NY")
     lat_lng = maps.first.data["geometry"]['location']
     @map_lat = lat_lng["lat"]
     @map_lng = lat_lng["lng"]
