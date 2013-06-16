@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:vendor_id] = nil
-    redirect_to sessions_new_path
+    redirect_to "/"
   end
 
   def index

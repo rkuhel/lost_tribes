@@ -1,6 +1,6 @@
 class EventsController < ApplicationController 
 
-before_filter :ensure_admin, only: [ :index, :destroy, :show, :edit]
+before_filter :ensure_admin, only: [ :destroy]
 
   def index
     @events = Event.all
