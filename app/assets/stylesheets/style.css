@@ -1,9 +1,23 @@
+
+
+
+
 body 
 {
 
 	background-color: #e2e2e2;
 }
 
+
+#box1 {
+  
+  background-color: #E33E17;
+
+
+}
+
+.sub-nav { color: black; }
+.sub-nav:hover { color: red; }
 
 .top-nav {
     -moz-box-shadow: 3px 3px 4px #000;
@@ -14,7 +28,6 @@ body
 }
 i { color: white;}
 i:hover { 
-		text-decoration:underline; 
 		color: red;
 }
 
