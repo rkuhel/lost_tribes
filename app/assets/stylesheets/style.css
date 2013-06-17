@@ -7,15 +7,9 @@ nav#top1.top-bar {  margin-bottom: 0px; }
 
 #box1 { background-color: #421F28;
 height: 770px;
-background-image: src="assets/images/pw_pattern.png";
-background-repeat: repeat;
 }
 
-."small 12 small-centered" {
-  background-image: src="assets/images/pw_pattern.png";
-background-repeat: repeat;
-}
-
+*/
 #sliders{
   height: 600px;
   margin-left: auto;
