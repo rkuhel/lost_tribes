@@ -16,13 +16,17 @@ e3 = Event.create(title: "Funeral", address: "110 3rd avenue", city: "new york c
 e4 = Event.create(title: "secret party", address: "110 3rd avenue", city: "new york city", date: "2013-011-23 06-30",  description: "rad party")
 e5 = Event.create(title: "forgot party", address: "110 3rd avenue", city: "new york city", date: "2013-012-23 06-30",  description: "Huge party")
 
-v1 = Vendor.create( name: "whole foods", address: "110 3rd avenue", city: "new york city", phone: "212 322 3454", email: "ny@wholefoods.com", comment: "yayy", admin: false, password: "wholef")
-v2 = Vendor.create( name: "mike", address: "316 east 11th street", city: "new york city", phone: "212 322 3419", email: "mike@mike.com", comment: "boss", admin: true, password: "mikesemail")
-v3 = Vendor.create( name: "terry's shop", address: "10 E 21ST ST", city: "new york city", phone: "212 322 9224", email: "terry@terry.com", comment: "wowwwwwww!", admin: false, password: "terrys")
-v4 = Vendor.create( name: "Ted Bar", address: "80 lafayette", city: "new york city", phone: "212 322 3499", email: "george@george.com", comment: "hunugry", admin: false, password: "george")
-v4 = Vendor.create( name: "Jersey Beer", address: "34 Wayne St", city: "jersey city", phone: "555 322 8752", email: "jersey@beer.com", comment: "hunugry", admin: false, password: "jersey")
-v4 = Vendor.create( name: "Babylonia", address: "41 First Avenue", city: "new york city", phone: "212 322 3336", email: "john@babylonia.com", comment: "hunugry", admin: false, password: "babylon")
-v4 = Vendor.create( name: "Cork City Pub", address: "3rd & Bloomfield Street", city: "Hoboken", phone: "917 884 6136", email: "jim@cork.com", comment: "Hoboken Rules!", admin: false, password: "cork")
+v1 = Vendor.create( name: "whole foods", address: "110 3rd avenue", city: "New York City", phone: "212 322 3454", email: "ny@wholefoods.com", comment: "yayy", admin: false, password: "wholef")
+v2 = Vendor.create( name: "mike", address: "316 east 11th street", city: "New York City", phone: "212 322 3419", email: "mike@mike.com", comment: "boss", admin: true, password: "mikesemail")
+v3 = Vendor.create( name: "terry's shop", address: "10 E 21ST ST", city: "New York City", phone: "212 322 9224", email: "terry@terry.com", comment: "wowwwwwww!", admin: false, password: "terrys")
+v4 = Vendor.create( name: "Ted Bar", address: "80 lafayette", city: "New York City", phone: "212 322 3499", email: "george@george.com", comment: "hunugry", admin: false, password: "george")
+v4 = Vendor.create( name: "Jersey Beer", address: "34 Wayne St", city: "Jersey City", phone: "555 322 8752", email: "jersey@beer.com", comment: "hunugry", admin: false, password: "jersey")
+v4 = Vendor.create( name: "Babylonia", address: "41 First Avenue", city: "New York City", phone: "212 322 3336", email: "john@babylonia.com", comment: "hunugry", admin: false, password: "babylon")
+v4 = Vendor.create( name: "Cork City Pub", address: "3rd & Bloomfield Street", city: "Hoboken", phone: "917 884 6136", email: "jim@cork.com", comment: "Hoboken Rules!", admin: false, password: "cork22")
+v4 = Vendor.create( name: "Midtown Pub", address: "200 Park Ave", city: "New York City", phone: "212 445 6136", email: "davie@gcbar.com", comment: "My Bar", admin: false, password: "rkuhel")
+v4 = Vendor.create( name: "Ryan Bar", address: "200 9th Ave", city: "New York City", phone: "212 333 4444", email: "ryan@ryan.com", comment: "My Bar", admin: true, password: "rkuhel")
+v4 = Vendor.create( name: "Brass Monkey", address: "55 Little W 12th St", city: "New York City", phone: "212 675 6686", email: "brass@brass.com", comment: "What Brass", admin: false, password: "monkey")
+
 
 
 

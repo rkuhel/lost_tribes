@@ -82,3 +82,11 @@ p {
   background-image: linear-gradient(#b42121, #5e1111);
   border-color: #5e1111 #5e1111 hsl(0, 69%, 17%);
 }
+
+#map label {
+ width: auto; display:inline;
+}
+
+#map img {
+ max-width: none;
+}
