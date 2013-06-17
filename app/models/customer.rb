@@ -3,7 +3,6 @@ class Customer < ActiveRecord::Base
 
   has_and_belongs_to_many :events
 
-  validates :password, presence: true, length: { in: 6..20 }
   validates :email, presence: true, uniqueness: true, :format => { :with => /^.+@.+\..+$/i, :on => :create }
 
   def self.to_csv(options = {})

@@ -1,8 +1,10 @@
 class Vendor < ActiveRecord::Base
-  attr_accessible :address, :comment, :email, :name, :phone, :events, :password, :admin
+ attr_accessible :address, :city, :comment, :email, :name, :phone, :events, :password, :admin
 
   has_and_belongs_to_many :events
   has_secure_password
+
+validates :password, presence: true, length: { in: 6..20 }
 
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
@@ -12,4 +14,7 @@ class Vendor < ActiveRecord::Base
       end
     end
   end
+
 end
+
+

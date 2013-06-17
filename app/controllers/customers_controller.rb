@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController 
 
-before_filter :ensure_admin, only: [:edit, :destroy, :index]
+before_filter :ensure_admin, only: [:index, :destroy, :show, :edit]
+
 
   def index
     @customers = Customer.all
@@ -51,6 +52,8 @@ def update
     redirect_to customers_path
   end
 end 
+
+
 
 
 

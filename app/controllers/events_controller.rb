@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 
 before_filter :ensure_admin, only: [ :destroy]
 
+
   def index
     @events = Event.all
   end
@@ -38,7 +39,6 @@ end
 
   def update
     event = Event.find(params[:id])
-
     if event.update_attributes(params[:event])
       redirect_to events_path
     else
@@ -50,6 +50,9 @@ end
     Event.find(params[:id]).delete
     redirect_to events_path
   end
+
+  
+
 
 end 
 

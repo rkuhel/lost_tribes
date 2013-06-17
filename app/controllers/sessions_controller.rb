@@ -16,24 +16,23 @@ class SessionsController < ApplicationController
     else
       redirect_to sessions_new_path    #back to login page
     end
+
   end
 
   def destroy
     session[:vendor_id] = nil
-    redirect_to "/"
+    redirect_to '/'
   end
 
   def index
     #events
     @events = Event.all
+   end
 
-    #new customers
-    @customers = Customer.all
+    def destroy
+			session[:vendor_id] = nil
+			redirect_to sessions_new_path
+    end    
 
-    #display vendors
-    @vendors = Vendor.all
 
-    #form to create new customer
-    @customer = Customer.new
-  end
 end

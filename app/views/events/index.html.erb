@@ -1,12 +1,16 @@
 <%= render partial: "/events/partials/nav.html.haml" %> 
+  <p><h3>Lost Tribes Events</h3></p>
+  <br>
 
 	<table>
 	<% @events.each do |event| %> 
 	<tr>
 	 <td> <%= link_to event.title, event %> </td>
 		<td> <%= event.date %> </td>
-		<td> <%= event.location %> </td>
+		<td> <%= event.address %> </td>
+		<td> <%= event.city %> </td>
 		<td> <%= event.description %> </td>
+
 	<% end %>
 	</tr>
 	</table>
