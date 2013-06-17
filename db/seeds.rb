@@ -21,7 +21,8 @@ v2 = Vendor.create( name: "mike", address: "316 east 11th street", city: "new yo
 v3 = Vendor.create( name: "terry's shop", address: "10 E 21ST ST", city: "new york city", phone: "212 322 9224", email: "terry@terry.com", comment: "wowwwwwww!", admin: false, password: "terrys")
 v4 = Vendor.create( name: "Ted Bar", address: "80 lafayette", city: "new york city", phone: "212 322 3499", email: "george@george.com", comment: "hunugry", admin: false, password: "george")
 v4 = Vendor.create( name: "Jersey Beer", address: "34 Wayne St", city: "jersey city", phone: "555 322 8752", email: "jersey@beer.com", comment: "hunugry", admin: false, password: "jersey")
-v4 = Vendor.create( name: "Babylonia", address: "41 First Avenue", city: "new york city", phone: "212 322 3336", email: "john@gbabylonia.com", comment: "hunugry", admin: false, password: "babylon")
+v4 = Vendor.create( name: "Babylonia", address: "41 First Avenue", city: "new york city", phone: "212 322 3336", email: "john@babylonia.com", comment: "hunugry", admin: false, password: "babylon")
+v4 = Vendor.create( name: "Cork City Pub", address: "3rd & Bloomfield Street", city: "Hoboken", phone: "917 884 6136", email: "jim@cork.com", comment: "Hoboken Rules!", admin: false, password: "cork")
 
 
 

@@ -1,37 +1,72 @@
 
-
-
-
-body 
-{
-
+body {
 	background-color: #e2e2e2;
 }
 
 nav#top1.top-bar {  margin-bottom: 0px; }
 
-#box1 { background-color: #421F28;}
+#box1 { background-color: #421F28;
+height: 770px;
+background-image: src="assets/images/pw_pattern.png";
+background-repeat: repeat;
+}
 
-.sub-nav { color: black; }
+."small 12 small-centered" {
+  background-image: src="assets/images/pw_pattern.png";
+background-repeat: repeat;
+}
+
+#sliders{
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sub-nav {
+  color: black;
+ }
+
 .sub-nav:hover { color: red; }
 
+div#data-magellan-expedition {
+  box-shadow: 10px 10px 5px #888888; 
+}
+
 i { color: white;}
+
 i:hover { 
 		color: red;
 }
 
+.specialbeers {
+ font-family: 'Old Standard TT', serif;
+   color: black;
+}
+
+.tribetitles {
+  font-family: 'Old Standard TT', serif;
+   color: white;
+}
+
+h3.tribetitles{
+  margin-top: 400px;
+   height: 660px;
+   vertical-align: center;
+}
+
+#smallerlt {
+  font-size: 18px;
+}
 
 h1 {
 	font-size: 54px;
-	font-family: helvetica; 
+	font-family: Tahoma, Verdana, sans-serif; 
 	letter-spacing: .5px;
-
+  margin-top: 25px;
 }
 
 p {
 	font-family: georgia; 
 	font-size: 22px;
-
 }
 
 .button {
@@ -46,5 +81,4 @@ p {
   background-image: -o-linear-gradient(top, #b42121, #5e1111);
   background-image: linear-gradient(#b42121, #5e1111);
   border-color: #5e1111 #5e1111 hsl(0, 69%, 17%);
-
-  }
+}
